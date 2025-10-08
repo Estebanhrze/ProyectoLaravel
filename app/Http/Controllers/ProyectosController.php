@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Proyectos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class ProyectosController extends Controller
 {
@@ -13,7 +15,7 @@ class ProyectosController extends Controller
     
     public function index()
     {
-             echo "Hola";
+        return view('projects/new');
 
     }
 
@@ -22,16 +24,19 @@ class ProyectosController extends Controller
      */
     public function create()
     {
-        //
+        return view("projects/new");
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+     public function store(Request $request)
     {
-        //
+    Proyectos::create($request->only(['nombre', 'descripcion']));
+    return redirect('project/')
+        ->with('success','Proyecto creado satisfactoriamente');
     }
+
 
     /**
      * Display the specified resource.
