@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProyectosController;
 
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('proyectos.index');
 });
+
 Route::resource('proyectos', ProyectosController::class);
 

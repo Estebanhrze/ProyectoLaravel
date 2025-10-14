@@ -36,7 +36,7 @@
           </form>
 
           <div class="text-center mt-3">
-            <a href="{{ route('proyectos.index') }}" class="btn btn-link">Volver al listado</a>
+<a href="{{ url('proyectos?view=list') }}" class="btn btn-link">Volver al listado</a>
           </div>
         </div>
       </div>

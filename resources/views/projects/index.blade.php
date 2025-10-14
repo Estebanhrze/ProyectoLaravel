@@ -11,18 +11,22 @@
 <div class="container py-4">
   <div class="row mb-3 text-center">
     <div class="col">
-      <h1 class="h3">Hello, world!</h1>
+      <h1 class="h3">Listado de los proyectos creados</h1>
     </div>
   </div>
 
   <div class="row">
     <div class="col-9 mx-auto">
+      <div class="text-center mb-3">
+  <a href="{{ url('proyectos') }}" class="btn btn-outline-primary">Nuevo proyecto</a>
+</div>
+
       <table class="table table-striped align-middle">
         <thead class="table-dark">
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Descripción</th>
+            <th scope="col">Descripción</th>     
             <th scope="col">Creado</th>
           </tr>
         </thead>
