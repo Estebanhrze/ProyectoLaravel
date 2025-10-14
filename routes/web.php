@@ -11,3 +11,5 @@ Route::get('/', function () {
 
 Route::resource('proyectos', ProyectosController::class);
 
+Route::resource('proyectos', App\Http\Controllers\ProyectosController::class);
+

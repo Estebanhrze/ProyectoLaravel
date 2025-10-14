@@ -44,7 +44,7 @@ class ProyectosController extends Controller
     /**
      * Display the specified resource.
      */
-  public function show(Proyecto $proyecto)
+  public function show(Proyectos $proyecto)
     {
         return view('proyectos.show', compact('proyecto'));
     }
@@ -52,31 +52,32 @@ class ProyectosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Proyectos $proyectos)
+      public function edit(Proyectos $proyecto)
     {
-        return view('proyectos.edit', compact('proyecto'));
+        return view('projects.edit', compact('proyecto'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-     public function update(Request $request, Proyectos $proyectos)
+    public function update(Request $request, Proyectos $proyecto)
     {
         $data = $request->validate([
             'nombre' => 'required|string|max:255',
             'descripcion' => 'nullable|string',
         ]);
 
-        $proyectos->update($data);
-        return redirect()->route('proyectos.index')->with('ok', 'Proyecto actualizado');
+        $proyecto->update($data);
+        return redirect('proyectos?view=list')->with('success','Proyecto actualizado');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
-       public function destroy(Proyectos $proyectos)
+       public function destroy(Proyectos $proyecto)
     {
-        $proyectos->delete();
-        return redirect()->route('proyectos.index')->with('ok', 'Proyecto eliminado');
+        $proyecto->delete();
+        return redirect('proyectos?view=list')->with('success','Proyecto eliminado');
     }
 }
